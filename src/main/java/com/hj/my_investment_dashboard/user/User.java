@@ -2,6 +2,7 @@ package com.hj.my_investment_dashboard.user;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,4 +24,11 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+    @Builder
+    public User(String userOd, String email, String password){
+        this.userId = userId;
+        this.email=email;
+        this.password=password;
+    }
 }
